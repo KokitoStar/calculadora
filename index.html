@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KOKITO STAR ® System</title>
     
+    <meta property="og:title" content="KOKITO STAR ® | Calculadora">
+    <meta property="og:description" content="Sistema oficial de gestión de honorarios y comisiones 2026.">
+    <meta property="og:image" content="https://kokitostar.github.io/calculadora/icon.png">
+    <meta property="og:url" content="https://kokitostar.github.io/calculadora/">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="shortcut icon" href="icon.png">
-    
     <link rel="apple-touch-icon" href="icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -67,10 +72,10 @@
         .system-version { text-align: center; font-size: 0.65rem; color: var(--cyan); opacity: 0.8; letter-spacing: 1px; margin-bottom: 10px; font-family: 'Rajdhani', sans-serif; text-transform: uppercase; }
         .kokito-bold { font-weight: 700; text-transform: uppercase; }
         
-        /* CORRECCIÓN GRID PARA ALINEACIÓN PERFECTA EN MÓVIL */
+        /* CORRECCIÓN GRID MÓVIL */
         .row { 
             display: grid; 
-            grid-template-columns: 1fr 1fr; /* 50% exacto para cada uno */
+            grid-template-columns: 1fr 1fr;
             gap: 12px; 
             width: 100%; 
         }
@@ -82,12 +87,10 @@
         }
         
         input {
-            /* Fix para iOS: Quitar apariencia de globo nativa */
             -webkit-appearance: none; appearance: none;
             padding: 14px 5px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px; color: #fff; font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; letter-spacing: 0.5px;
-            width: 100%; box-sizing: border-box; outline: none; transition: all 0.3s ease; text-align: center;
-            min-width: 0;
+            width: 100%; box-sizing: border-box; outline: none; transition: all 0.3s ease; text-align: center; min-width: 0;
         }
         input:focus { border-color: var(--cyan); background: rgba(6, 182, 212, 0.05); box-shadow: 0 0 25px rgba(6, 182, 212, 0.15); }
         
@@ -104,17 +107,12 @@
 
         /* BOTÓN LIMPIAR */
         .btn-clear {
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 12px; border-radius: 14px;
-            font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 700;
+            background: transparent; border: 2px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.5);
+            padding: 12px; border-radius: 14px; font-family: 'Rajdhani', sans-serif; font-size: 0.85rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 10px; width: 100%;
             transition: all 0.3s ease;
         }
-        .btn-clear:hover, .btn-clear:active {
-            border-color: rgba(255, 255, 255, 0.4); color: #fff; background: rgba(255, 255, 255, 0.05);
-        }
+        .btn-clear:hover, .btn-clear:active { border-color: rgba(255, 255, 255, 0.4); color: #fff; background: rgba(255, 255, 255, 0.05); }
 
         .results { margin-top: 25px; display: none; flex-direction: column; gap: 15px; }
         .card { padding: 18px 25px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
@@ -146,7 +144,6 @@
         @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
         .modal-title { font-family: 'Rajdhani', sans-serif; font-size: 1.6rem; font-weight: 700; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px; }
         .modal-msg { color: #e0e7ff; font-size: 1rem; line-height: 1.6; margin-bottom: 25px; font-weight: 300; }
-        .modal-msg strong { color: var(--gold); font-weight: 700; }
         .modal-amount-highlight { display: block; font-family: 'Rajdhani', sans-serif; font-size: 3rem; font-weight: 700; margin: 15px 0; filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5)); }
         .btn-modal { position: relative; z-index: 2; background: linear-gradient(45deg, var(--cyan), #2563EB); color: #fff; margin-top: 0; padding: 15px; font-weight: 700; letter-spacing: 1px; border:none; border-radius:12px; width:100%; cursor:pointer; }
         .show-modal { opacity: 1; } .show-modal .modal-content { transform: scale(1) translateY(0); }
